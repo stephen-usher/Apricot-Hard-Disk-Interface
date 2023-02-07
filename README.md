@@ -10,3 +10,5 @@
  The Raspberry Pi Pico's software is written in C using the Pico SDK. I used the version which runs on a Raspberry Pi 4 to develop this. One core is used for the host interface and the other for the less  time critical parts such as emulating the WD1010-05 commands and talking to the microSD card.
 
  The microSD card interface I used was easily found on Amazon and targetted at the Arduino, hence why it is a 5V model. It's an "AZ-Delivery SPI Reader Micro". Others will probably work but the pin-outs may  be different.
+
+ The PCB was designed using KiCAD 6.
