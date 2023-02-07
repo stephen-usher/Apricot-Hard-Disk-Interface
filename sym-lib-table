@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "Apricot-Hard-Disk-Interface-rescue")(type "Legacy")(uri "${KIPRJMOD}/Apricot-Hard-Disk-Interface-rescue.lib")(options "")(descr "")(disabled))
+  (lib (name "Apricot_sym")(type "KiCad")(uri "${KIPRJMOD}/Library/Apricot_sym.kicad_sym")(options "")(descr ""))
+)

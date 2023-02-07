@@ -1,0 +1,76 @@
+LISTING FOR LOGIC DESCRIPTION FILE: ADDRESS-DECODER.pld              Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# 60008009
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Sun Dec 11 11:27:17 2022
+
+  1:Name     Apricot F1 SRAM expansion address decode ;
+  2:PartNo   00 ;
+  3:Date     11/12/2022 ;
+  4:Revision 02 ;
+  5:Designer Engineer ;
+  6:Company  Personal ;
+  7:Assembly None ;
+  8:Location  ;
+  9:Device   g16v8 ;
+ 10:
+ 11:/*
+ 12: * Rev 2. Change sense of IO_R_W and use IORC as switch.
+ 13: */
+ 14:
+ 15:/* *************** INPUT PINS *********************/
+ 16:/*PIN  1 = NC; /**/ 
+ 17:PIN  2 = !SELECTED; /**/ 
+ 18:PIN  3 = SYS_TYPE; /**/ 
+ 19:PIN  4 = A17; /**/ 
+ 20:PIN  5 = A18; /**/ 
+ 21:PIN  6 = DEN; /**/ 
+ 22:PIN  7 = !MRDC; /**/ 
+ 23:PIN  8 = !MWTC;
+ 24:PIN  9 = !IORC;
+ 25:PIN 11 = !IOWC; /**/
+ 26:
+ 27:/* *************** OUTPUT PINS *********************/
+ 28:/*PIN 12 = ; /**/
+ 29:PIN 13 = !IO_R_W; /**/
+ 30:PIN 14 = !IO_OP;
+ 31:PIN 15 = !MEM_OP;
+ 32:PIN 16 = !BOARD_OE;
+ 33:PIN 17 = !WE;
+ 34:PIN 18 = !MOE;
+ 35:/*PIN 19 = ; /**/
+ 36:
+ 37:HIGHMEM = A18 & !A17;
+ 38:LOWMEM = (A17 & !A18) & SYS_TYPE;
+ 39:
+ 40:SELECT = HIGHMEM # LOWMEM;
+ 41:
+ 42:BOARD_OE = (SELECT # SELECTED) & DEN;
+ 43:
+ 44:MEM_OP = MWTC # MRDC;
+ 45:BAD_MEM_OP = MWTC & MRDC;
+ 46:
+ 47:IO_OP = IORC # IOWC;
+ 48:IO_R_W = IORC & !IOWC;
+ 49:
+ 50:FULL_SELECT = SELECT & MEM_OP & !BAD_MEM_OP;
+ 51:
+ 52:MOE = FULL_SELECT & DEN;
+ 53:
+
+LISTING FOR LOGIC DESCRIPTION FILE: ADDRESS-DECODER.pld              Page 2
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# 60008009
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Sun Dec 11 11:27:17 2022
+
+ 54:WE = FULL_SELECT & MWTC;
+ 55:
+ 56:
+
+
+
+Jedec Fuse Checksum       (5619)
+Jedec Transmit Checksum   (1581)

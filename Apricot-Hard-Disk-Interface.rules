@@ -1,0 +1,112 @@
+
+(rules PCB Apricot-Hard-Disk-Interface
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (eu.mihosoft.freerouting.autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 24991)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 3.3)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.4)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_800:400_um-Power" "Via[0-1]_800:400_um" Power
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (via_rule
+    Power "Via[0-1]_800:400_um-Power"
+  )
+  (class default
+    VCC CLK15 "_BHE" "unconnected-(J1-Pada3)" "unconnected-(J1-Pada4)" AB13 AB5 AB3
+    AB1 "unconnected-(J1-Pada9)" "unconnected-(J1-Pada10)" "unconnected-(J1-Pada11)" "unconnected-(J1-Pada12)" AB7 "_INT2" ALE
+    "unconnected-(J1-Pada16)" MRDY DEN "_AIOWC" "_RES" "_IORC" "DT_R" "_MRDC"
+    AB12 AB9 DB7 DB5 DB3 DB1 "unconnected-(J1-Pada32)" "unconnected-(J1-Padb1)"
+    "unconnected-(J1-Padb2)" "unconnected-(J1-Padb3)" "unconnected-(J1-Padb4)" AB14 AB0 AB4 AB2 "unconnected-(J1-Padb9)"
+    "unconnected-(J1-Padb10)" "unconnected-(J1-Padb11)" "unconnected-(J1-Padb12)" AB8 AB6 "_INT3" "unconnected-(J1-Padb16)" IRDY
+    CLK5 "_IOWC" "_MWTC" "unconnected-(J1-Padb22)" "unconnected-(J1-Padb23)" "_AMWC" AB11 AB10
+    DB6 DB4 DB2 DB0 "unconnected-(J1-Padb32)" D0 D1 D2
+    D3 D4 D5 D6 D7 "unconnected-(J2-Pada9)" "unconnected-(J2-Pada10)" "unconnected-(J2-Pada11)"
+    "unconnected-(J2-Pada12)" "unconnected-(J2-Pada13)" "unconnected-(J2-Pada14)" "unconnected-(J2-Pada15)" "unconnected-(J2-Pada16)" "_SELECTED" "_MEM_OP" "_IO_OP"
+    "_WE" "IO_R_W" "unconnected-(J2-Pada26)" "unconnected-(J2-Pada30)" "_I_BHE" "_I_BLE" A0 A1
+    A2 A3 A4 A5 A6 A7 A8 A9
+    A10 A11 A12 A13 "unconnected-(J2-Padb17)" "unconnected-(J2-Padb18)" "unconnected-(J2-Padb19)" "unconnected-(J2-Padb20)"
+    "unconnected-(J2-Padb21)" "unconnected-(J2-Padb22)" "unconnected-(J2-Padb30)" "SPI_MISO" "SPI_MOSI" "SPI_CLK" "SPI_CS" VSYS
+    "unconnected-(U1-Pad1)" "P_INT" "unconnected-(U1-Pad7)" "unconnected-(U1-Pad8)" "unconnected-(U1-Pad9)" "unconnected-(U1-Pad11)" "unconnected-(U1-Pad12)" "unconnected-(U1-Pad13)"
+    "unconnected-(U1-Pad15)" "unconnected-(U1-Pad16)" "unconnected-(U1-Pad17)" "unconnected-(U1-Pad19)" PA3 PA4 PA8 PIOWAIT
+    PA2 PA1 "P_RW" "P_SELECTED" PD7 PD6 PD5 PD4
+    PD3 PD2 PD1 PD0 "unconnected-(U4-Pad1)" "unconnected-(U4-Pad12)" "_BOARD_OE" "unconnected-(U4-Pad18)"
+    "unconnected-(U4-Pad19)" "unconnected-(P1-Pad11)" "unconnected-(P1-Pad12)" "unconnected-(P1-Pad21)" "unconnected-(P1-Pad22)" "unconnected-(P1-Pad30)" "unconnected-(P1-Pad31)" "unconnected-(P1-Pad33)"
+    "unconnected-(P1-Pad35)" "unconnected-(P1-Pad37)" "unconnected-(P1-Pad40)" "unconnected-(P1-Pad41)" "unconnected-(P1-Pad42)" "unconnected-(P1-Pad43)"
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class Power
+    GND +3.3V
+    (clearance_class Power)
+    (via_rule Power)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

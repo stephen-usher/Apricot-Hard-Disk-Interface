@@ -1,0 +1,54 @@
+Name     Apricot F1 SRAM expansion address decode ;
+PartNo   00 ;
+Date     11/12/2022 ;
+Revision 02 ;
+Designer Engineer ;
+Company  Personal ;
+Assembly None ;
+Location  ;
+Device   g16v8 ;
+
+/*
+ * Rev 2. Change sense of IO_R_W and use IORC as switch.
+ */
+
+/* *************** INPUT PINS *********************/
+/*PIN  1 = NC; /**/ 
+PIN  2 = !SELECTED; /**/ 
+PIN  3 = SYS_TYPE; /**/ 
+PIN  4 = A17; /**/ 
+PIN  5 = A18; /**/ 
+PIN  6 = DEN; /**/ 
+PIN  7 = !MRDC; /**/ 
+PIN  8 = !MWTC;
+PIN  9 = !IORC;
+PIN 11 = !IOWC; /**/
+
+/* *************** OUTPUT PINS *********************/
+/*PIN 12 = ; /**/
+PIN 13 = !IO_R_W; /**/
+PIN 14 = !IO_OP;
+PIN 15 = !MEM_OP;
+PIN 16 = !BOARD_OE;
+PIN 17 = !WE;
+PIN 18 = !MOE;
+/*PIN 19 = ; /**/
+
+HIGHMEM = A18 & !A17;
+LOWMEM = (A17 & !A18) & SYS_TYPE;
+
+SELECT = HIGHMEM # LOWMEM;
+
+BOARD_OE = (SELECT # SELECTED) & DEN;
+
+MEM_OP = MWTC # MRDC;
+BAD_MEM_OP = MWTC & MRDC;
+
+IO_OP = IORC # IOWC;
+IO_R_W = IORC & !IOWC;
+
+FULL_SELECT = SELECT & MEM_OP & !BAD_MEM_OP;
+
+MOE = FULL_SELECT & DEN;
+
+WE = FULL_SELECT & MWTC;

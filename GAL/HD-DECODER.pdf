@@ -1,0 +1,138 @@
+{COMPONENT Z:\DATA\KICAD\APRICOT-HARD-DISK-INTERFACE\GAL\HD-DECODER.SYM
+
+ {ENVIRONMENT
+  {PDIFvrev 3.00}
+  {Program "CUPL(WM) Version 5.0a"}
+  {DBtype "Schematic"}
+  {DBvrev 1.01}
+  {DBtime "Thu Jan 19 18:53:01 2023 "}
+  {DBunit "MIL"}
+  {DBgrid 10}
+  {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
+          "PINNAM" 6 "PINCON" 4 "REFDES" 2 "ATTR" 6 "SDOT" 1 
+          "DEVICE" 5 "OUTLIN" 5 "ATTR2" 6 "NOTES" 6 "NETNAM" 4 
+          "CMPNAM" 5 "BORDER" 5}
+ }
+
+ {USER
+  {VIEW
+   {Mode SYMB}
+   {Nlst OPEN}
+   {Vw 0 0 2}
+   {Lv 12 2 2 2 0 0 2 2 2 2 0 0 2 1 2 0 0 0 0}
+   {Gs 10 10}
+  }
+ }
+
+ {DISPLAY
+  [Ly "PINNUM"]
+  [Ls "SOLID"][Wd 0]
+  [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+ }
+
+ {SYMBOL
+  {PIN_DEF
+   [Ly "PINCON"]
+   {P IO_OP' {Pt "INPUT"}{Lq 0}{Ploc 100 160}}
+   {P A5 {Pt "INPUT"}{Lq 0}{Ploc 100 140}}
+   {P A6 {Pt "INPUT"}{Lq 0}{Ploc 100 120}}
+   {P A7 {Pt "INPUT"}{Lq 0}{Ploc 100 100}}
+   {P P_INT' {Pt "INPUT"}{Lq 0}{Ploc 100 80}}
+   {P ALE' {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
+   {P INT2' {Pt "INPUT"}{Lq 0}{Ploc 100 40}}
+   {P SELECTED' {Pt "INPUT"}{Lq 0}{Ploc 100 20}}
+  }
+
+  {PKG
+   [Ly "REFDES"]
+   [Ts 25][Tj "CB"][Tr 0][Tm "N"]
+   {Rdl 190 190}
+
+   [Ly "PINNUM"]
+   [Ts 15][Tj "RC"]
+   {Pnl 120 170}
+   {Pnl 120 150}
+   {Pnl 120 130}
+   {Pnl 120 110}
+   {Pnl 120 90}
+   {Pnl 120 70}
+   {Pnl 120 50}
+   {Pnl 120 30}
+   [Ts 15][Tj "LC"]
+
+   {Sd A 2 3 4 5 6 7 14 18}
+  }
+
+  {PIC
+   [Ly "GATE"]
+   [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+   {R 130 180 250 0}
+   {L 120 160 100 160}
+   {C 125 160 5}
+   {L 130 140 100 140}
+   {L 130 120 100 120}
+   {L 130 100 100 100}
+   {L 120 80 100 80}
+   {C 125 80 5}
+   {L 120 60 100 60}
+   {C 125 60 5}
+   {L 120 40 100 40}
+   {C 125 40 5}
+   {L 120 20 100 20}
+   {C 125 20 5}
+   [Ly "PINNAM"]
+   [Tj "LC"]
+   {T "IO_OP'" 140 160}
+   {T "A5" 140 140}
+   {T "A6" 140 120}
+   {T "A7" 140 100}
+   {T "P_INT'" 140 80}
+   {T "ALE'" 140 60}
+   {T "INT2'" 140 40}
+   {T "SELECTED'" 140 20}
+   [Tj "RC"]
+   [Ly "DEVICE"]
+   [Tj "CT"]
+   {T "G16V8S" 190 -10}
+  }
+
+  {ATR
+   {IN
+    {Org 100 20}
+    {Ty 255}
+   }
+   {EX
+    [Ly "ATTR2"]
+    [Ts 12][Tj "CT"][Tr 0][Tm "N"]
+    {At PLD Z:\DATA\KICAD\APRICOT-HARD-DISK-INTERFACE\GAL\HD-DECODER 190 180}
+   }
+  }
+ }
+
+ {DETAIL
+  {ANNOTATE
+  }
+
+  {NET_DEF
+   {N IO_OP'
+   }
+   {N A5
+   }
+   {N A6
+   }
+   {N A7
+   }
+   {N P_INT'
+   }
+   {N ALE'
+   }
+   {N INT2'
+   }
+   {N SELECTED'
+   }
+  }
+
+  {SUBCOMP
+  }
+ }
+}

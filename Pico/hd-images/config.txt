@@ -1,0 +1,16 @@
+# This is the configuration file for the Apricot hard drive emulator.
+#
+# There has to be at least one drive line, drive1
+# Drive lines have the format:
+#               drive<n>=<filename>,<size>
+# Where n is either 1 or 2
+# and the size is either 5, 10 or 20 for the size of the virtual drive in megabytes.
+#
+# If the drive file doesn't exist then an empty drive (with the correct Apricot headers)
+# is created.
+#
+# Don't try to use 20MB images with the Apricot F1 as it assumes that it's a 10MB drive.
+#
+drive1=hd0.img,10
+drive2=hd1.img,10
+#drive1=hd20.img,20

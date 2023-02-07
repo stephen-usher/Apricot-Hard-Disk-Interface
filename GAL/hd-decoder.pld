@@ -1,0 +1,35 @@
+Name     Apricot F1 HD Simulator address decode ;
+PartNo   00 ;
+Date     07/12/2022 ;
+Revision 01 ;
+Designer Engineer ;
+Company  Personal ;
+Assembly None ;
+Location  ;
+Device   g16v8 ;
+
+/* *************** INPUT PINS *********************/
+/*PIN  1 = NC; /**/ 
+PIN  2 = !IO_OP; /**/ 
+PIN  3 = A5; /**/ 
+PIN  4 = A6; /**/ 
+PIN  5 = A7; /**/ 
+PIN  6 = !P_INT; /**/ 
+PIN  7 = !ALE; /**/ 
+/*PIN  8 = NC; /**/
+/*PIN  9 = NC; /**/
+/*PIN 11 = NC; /**/
+
+/* *************** OUTPUT PINS *********************/
+/*PIN 12 = ; /**/
+/*PIN 13 = NC; /**/
+PIN 14 = !INT2; /**/
+/*PIN 15 = NC; /**/
+/*PIN 16 = NC; /**/
+/*PIN 17 = NC; /**/
+PIN 18 = !SELECTED; /**/
+/*PIN 19 = ; /**/
+
+SELECTED = A5 & A6 & A7 & IO_OP & ALE;
+
+INT2 = P_INT;

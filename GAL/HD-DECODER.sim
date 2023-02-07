@@ -1,0 +1,22 @@
+%SIGNAL
+PIN   3 =  A5 
+PIN   4 =  A6 
+PIN   5 =  A7 
+PIN   7 = !ALE 
+PIN  14 = !INT2 
+PIN   2 = !IO_OP 
+PIN   6 = !P_INT 
+PIN  18 = !SELECTED 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+INT2 =>
+    !P_INT
+
+SELECTED =>
+    A5 & A6 & A7 & !ALE & !IO_OP
+
+%END

@@ -1,0 +1,48 @@
+LISTING FOR LOGIC DESCRIPTION FILE: HD-DECODER.pld                   Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# 60008009
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Thu Jan 19 18:53:01 2023
+
+  1:Name     Apricot F1 HD Simulator address decode ;
+  2:PartNo   00 ;
+  3:Date     07/12/2022 ;
+  4:Revision 01 ;
+  5:Designer Engineer ;
+  6:Company  Personal ;
+  7:Assembly None ;
+  8:Location  ;
+  9:Device   g16v8 ;
+ 10:
+ 11:/* *************** INPUT PINS *********************/
+ 12:/*PIN  1 = NC; /**/ 
+ 13:PIN  2 = !IO_OP; /**/ 
+ 14:PIN  3 = A5; /**/ 
+ 15:PIN  4 = A6; /**/ 
+ 16:PIN  5 = A7; /**/ 
+ 17:PIN  6 = !P_INT; /**/ 
+ 18:PIN  7 = !ALE; /**/ 
+ 19:/*PIN  8 = NC; /**/
+ 20:/*PIN  9 = NC; /**/
+ 21:/*PIN 11 = NC; /**/
+ 22:
+ 23:/* *************** OUTPUT PINS *********************/
+ 24:/*PIN 12 = ; /**/
+ 25:/*PIN 13 = NC; /**/
+ 26:PIN 14 = !INT2; /**/
+ 27:/*PIN 15 = NC; /**/
+ 28:/*PIN 16 = NC; /**/
+ 29:/*PIN 17 = NC; /**/
+ 30:PIN 18 = !SELECTED; /**/
+ 31:/*PIN 19 = ; /**/
+ 32:
+ 33:SELECTED = A5 & A6 & A7 & IO_OP & ALE;
+ 34:
+ 35:INT2 = P_INT;
+ 36:
+
+
+
+Jedec Fuse Checksum       (10a5)
+Jedec Transmit Checksum   (8871)

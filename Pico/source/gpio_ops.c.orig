@@ -1,0 +1,85 @@
+#include <stdio.h>
+
+#include "pico/stdlib.h"
+#include "hardware/gpio.h"
+
+#include "apricot-hd.h"
+#include "pin_defs.h"
+
+void init_bus()
+{
+	gpio_init_mask(BUS_GPIO_MASK + CTRL_GPIO_MASK + ADDR_GPIO_MASK + OUT_GPIO_MASK);
+	gpio_set_dir_in_masked(BUS_GPIO_MASK + CTRL_GPIO_MASK + ADDR_GPIO_MASK);
+	gpio_set_dir_masked(OUT_GPIO_MASK, OUT_GPIO_MASK);
+}
+
+void assert_int2()
+{
+	gpio_put(PIN_INT2, 0);
+}
+
+void deassert_int2()
+{
+	gpio_put(PIN_INT2, 1);
+}
+
+void bus_mode_write()
+{
+	gpio_set_dir_masked(BUS_GPIO_MASK, 0x0F);
+}
+
+void bus_mode_read()
+{
+	gpio_set_dir_masked(BUS_GPIO_MASK, 0x00);
+}
+
+unsigned char read_bus()
+{
+	unsigned char byte;
+
+	byte = gpio_get(PIN_D0) +
+		gpio_get(PIN_D1) << 1 +
+		gpio_get(PIN_D2) << 2 +
+		gpio_get(PIN_D3) << 3 +
+		gpio_get(PIN_D4) << 4 +
+		gpio_get(PIN_D5) << 5 +
+		gpio_get(PIN_D6) << 6 +
+		gpio_get(PIN_D7) << 7;
+		
+	return byte;
+}
+
+void write_bus(unsigned char byte)
+{
+	gpio_put_masked(BUS_GPIO_MASK, (uint32_t) byte);
+}
+
+unsigned int bus_is_read()
+{
+	return ((gpio_get(PIN_READ_WRITE)) ? 0 : 1 );
+}
+
+struct bus_addr *accessed_address()
+{
+	static struct bus_addr addr;
+
+	addr.highbits = (gpio_get(PIN_A8) << 1) + gpio_get(PIN_A4);
+	addr.lowbits = (gpio_get(PIN_A3) << 2) + (gpio_get(PIN_A2) << 1) + gpio_get(PIN_A1);
+
+	return &addr;
+}
+
+unsigned int is_selected()
+{
+	return ((gpio_get(PIN_SELECTED)) ? 0 : 1);
+}
+
+void assert_iowait()
+{
+	gpio_put(PIN_IOWAIT, 0);
+}
+
+void deassert_iowait()
+{
+	gpio_put(PIN_IOWAIT, 1);
+}

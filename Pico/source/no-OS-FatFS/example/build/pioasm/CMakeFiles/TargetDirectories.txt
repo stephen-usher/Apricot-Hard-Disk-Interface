@@ -1,0 +1,3 @@
+/home/steve/apricot-hd/c/no-OS-FatFS/example/build/pioasm/CMakeFiles/rebuild_cache.dir
+/home/steve/apricot-hd/c/no-OS-FatFS/example/build/pioasm/CMakeFiles/edit_cache.dir
+/home/steve/apricot-hd/c/no-OS-FatFS/example/build/pioasm/CMakeFiles/pioasm.dir

@@ -1,0 +1,86 @@
+%SIGNAL
+PIN   4 =  A17 
+PIN   5 =  A18 
+PIN  16 = !BOARD_OE 
+PIN   6 =  DEN 
+PIN   9 = !IORC 
+PIN  11 = !IOWC 
+PIN  14 = !IO_OP 
+PIN  13 = !IO_R_W 
+PIN  15 = !MEM_OP 
+PIN  18 = !MOE 
+PIN   7 = !MRDC 
+PIN   8 = !MWTC 
+PIN   2 = !SELECTED 
+PIN   3 =  SYS_TYPE 
+PIN  17 = !WE 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+BAD_MEM_OP =>
+    MRDC & MWTC
+
+BOARD_OE =>
+    DEN & !SELECTED
+  # A17 & !A18 & DEN & SYS_TYPE
+  # !A17 & A18 & DEN
+
+FULL_SELECT =>
+    A17 & !A18 & MEM_OP & !MRDC & SYS_TYPE
+  # !A17 & A18 & MEM_OP & !MRDC
+  # A17 & !A18 & MEM_OP & !MWTC & SYS_TYPE
+  # !A17 & A18 & MEM_OP & !MWTC
+
+HIGHMEM =>
+    !A17 & A18
+
+IO_OP =>
+    !IORC
+  # !IOWC
+
+IO_R_W =>
+    !IORC & IOWC
+
+LOWMEM =>
+    A17 & !A18 & SYS_TYPE
+
+MEM_OP =>
+    !MWTC
+  # !MRDC
+
+MOE =>
+    A17 & !A18 & DEN & !MEM_OP & MRDC & SYS_TYPE
+  # !A17 & A18 & DEN & !MEM_OP & MRDC
+  # !A17 & A18 & DEN & !MEM_OP & MWTC
+  # A17 & !A18 & DEN & !MEM_OP & MWTC & SYS_TYPE
+
+SELECT =>
+    !A17 & A18
+  # A17 & !A18 & SYS_TYPE
+
+WE =>
+    A17 & !A18 & !MEM_OP & MRDC & !MWTC & SYS_TYPE
+  # !A17 & A18 & !MEM_OP & MRDC & !MWTC
+
+BOARD_OE.oe  =>
+    1 
+
+IO_OP.oe  =>
+    1 
+
+IO_R_W.oe  =>
+    1 
+
+MEM_OP.oe  =>
+    1 
+
+MOE.oe  =>
+    1 
+
+WE.oe  =>
+    1 
+
+%END
