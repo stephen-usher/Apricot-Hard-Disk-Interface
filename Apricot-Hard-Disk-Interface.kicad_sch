@@ -4001,7 +4001,7 @@
     (property "Reference" "U3" (id 0) (at 109.601 167.894 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "74LS245" (id 1) (at 108.585 162.814 90)
+    (property "Value" "74AHCT245" (id 1) (at 108.585 162.814 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Footprint" "Package_DIP:DIP-20_W7.62mm_Socket" (id 2) (at 112.649 165.608 0)
@@ -5578,7 +5578,7 @@
       (reference "U2") (unit 1) (value "74AHCT244") (footprint "Package_DIP:DIP-20_W7.62mm_Socket")
     )
     (path "/1f67cb67-118d-4f11-96a3-bc4028b3a359"
-      (reference "U3") (unit 1) (value "74LS245") (footprint "Package_DIP:DIP-20_W7.62mm_Socket")
+      (reference "U3") (unit 1) (value "74AHCT245") (footprint "Package_DIP:DIP-20_W7.62mm_Socket")
     )
     (path "/a79178a7-e116-45e7-84d2-30a30f8bb515"
       (reference "U4") (unit 1) (value "GAL16V8") (footprint "Package_DIP:DIP-20_W7.62mm_Socket")
