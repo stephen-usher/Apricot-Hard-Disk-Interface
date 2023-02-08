@@ -4,3 +4,5 @@
  The architecture is quite simple. The system first sets up the pins on the Pico, initialises the SD card interface, reads the config file and sets up the configuration for the virtual hard drives. It then  runs the host interface code on core 1 whilst core 0 waits for WD1010-05 commands and actions them.
 
  The buffer and many variables are shareed between the two cores, the variables being defined as volatile so that the compiler knows not to optimise accesses away or cache the values. This acts as the inter  core communication.
+
+ Currently the only outstanding issue is that format.exe and the Activity Disk Tools format both hang when doing the low-level format. Actually, the programs both do a seek command, check the status register once after it's completed and then just sit there. There's no further interaction from the host. I've tried all potentially valid status register values and it makes no difference.
